@@ -37,4 +37,6 @@ button:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px #000;
+  transition: transform 0.2s ease-in-out;
 }
+
