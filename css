@@ -1,0 +1,40 @@
+body {
+  font-family: 'Georgia', serif;
+  background: radial-gradient(circle at center, #1c1c1c, #0d0d0d);
+  color: #f0e6d2;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #000;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  margin: 10px;
+  border: 2px solid #e2c275;
+  background-color: #2e2b1e;
+  color: #e2c275;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #3b3626;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #e2c275;
+}
+
+#resultado {
+  font-size: 4rem;
+  margin-top: 40px;
+  background: linear-gradient(to right, #e2c275, #f0e6d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px #000;
+}
