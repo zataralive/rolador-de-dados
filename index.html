@@ -1,345 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pirâmide Etária Brasil: Gerações em Transformação 2024/2025</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Rolador de Dados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #resultado {
+      font-size: 48px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="app-container">
-        <header class="site-header">
-            <h1>Pirâmide Etária do Brasil: Panorama 2024/2025</h1>
-        </header>
+  <h1>🎲 Rolador de Dados</h1>
+  <button onclick="rolarDado(6)">D6</button>
+  <button onclick="rolarDado(20)">D20</button>
+  <button onclick="rolarDado(100)">D100</button>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home" data-target="home" class="nav-link active">Início</a></li>
-                <li><a href="#panorama" data-target="panorama" class="nav-link">Panorama 2024</a></li>
-                <li><a href="#projeccoes" data-target="projeccoes" class="nav-link">Projeções Futuras</a></li>
-                <li><a href="#geracoes-hub" data-target="geracoes-hub" class="nav-link">As Gerações</a></li>
-                <li><a href="#consumo-mercado" data-target="consumo-mercado" class="nav-link">Consumo & Mercado</a></li>
-                <li><a href="#impactos-sociais" data-target="impactos-sociais" class="nav-link">Impactos Sociológicos</a></li>
-                <li><a href="#fontes" data-target="fontes" class="nav-link">Fontes</a></li>
-            </ul>
-        </nav>
+  <div id="resultado">🎲</div>
 
-        <main id="main-content" class="main-content">
-            <!-- Seção Home (Visível por padrão) -->
-            <section id="home" class="content-section active">
-                <h2>Bem-vindo ao Panorama Demográfico do Brasil 2024/2025</h2>
-                <p>Explore as profundas mudanças na estrutura etária do Brasil, conheça em detalhes as cinco gerações que coexistem e moldam nossa sociedade, e entenda os impactos dessas transformações no mercado, na política e na vida cotidiana.</p>
+  <script>
+    function rolarDado(lados) {
+      const resultado = Math.floor(Math.random() * lados) + 1;
+      document.getElementById('resultado').textContent = `🎲 ${resultado}`;
+    }
+  </script>
 
-                <div class="visual-principal">
-                    <h3>Figura 1: Transformação da Pirâmide Etária (2010 vs 2022)</h3>
-                    <!-- Placeholder para Gráfico/Imagem da Pirâmide -->
-                    <div id="piramide-chart-placeholder-home">
-                        <img src="placeholder-piramide.png" alt="Pirâmide Etária Brasil 2010 (azul) vs 2022 (laranja)" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 10px;">
-                        <p><em>Pirâmide etária do Brasil comparando a distribuição por idade em 2010 (azul) e 2022 (laranja), conforme dados dos Censos IBGE. Nota-se o estreitamento da base (menos crianças e jovens) e o alargamento do topo (mais idosos) em 2022, evidenciando o envelhecimento populacional acelerado na última década.</em></p>
-                    </div>
-                </div>
-
-                <div class="destaques cards-container">
-                    <h3>Navegação Rápida</h3>
-                    <div class="card">
-                        <h4>Panorama Atual</h4>
-                        <p>A fotografia demográfica do Brasil hoje: menos jovens, mais idosos e uma maioria adulta.</p>
-                        <button class="button-link" data-target="panorama">Ver Panorama 2024</button>
-                    </div>
-                     <div class="card">
-                        <h4>O Futuro Demográfico</h4>
-                        <p>Projeções até 2070: pico populacional, envelhecimento acentuado e desafios futuros.</p>
-                        <button class="button-link" data-target="projeccoes">Ver Projeções</button>
-                    </div>
-                     <div class="card">
-                        <h4>As 5 Gerações</h4>
-                        <p>Baby Boomers, Geração X, Millennials (Y), Geração Z e Alpha: perfis detalhados.</p>
-                        <button class="button-link" data-target="geracoes-hub">Conhecer as Gerações</button>
-                    </div>
-                    <div class="card">
-                        <h4>Consumo e Mercado</h4>
-                        <p>Como cada geração compra? Padrões, preferências e dicas para o mercado.</p>
-                        <button class="button-link" data-target="consumo-mercado">Analisar o Consumo</button>
-                    </div>
-                    <div class="card">
-                        <h4>Impactos na Sociedade</h4>
-                        <p>As consequências sociais, culturais e políticas da convivência intergeracional.</p>
-                        <button class="button-link" data-target="impactos-sociais">Entender os Impactos</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Seção Panorama -->
-            <section id="panorama" class="content-section">
-                <h2>1. Panorama Geral da Pirâmide Etária no Brasil (2024)</h2>
-
-                <div class="visual-principal">
-                    <h3>Figura 1: Pirâmide Etária (2010 vs 2022)</h3>
-                     <div id="piramide-chart-placeholder-panorama">
-                        <img src="placeholder-piramide.png" alt="Pirâmide Etária Brasil 2010 (azul) vs 2022 (laranja)" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 10px;">
-                        <p><em>Pirâmide etária do Brasil comparando a distribuição por idade em 2010 (azul) e 2022 (laranja), conforme dados dos Censos IBGE. Nota-se o estreitamento da base (menos crianças e jovens) e o alargamento do topo (mais idosos) em 2022, evidenciando o envelhecimento populacional acelerado na última década.</em></p>
-                    </div>
-                </div>
-
-                <p>O Brasil vive uma transição demográfica marcada pelo envelhecimento da população e redução do peso relativo de jovens. Em 2022, apenas <strong>19,8%</strong> dos brasileiros tinham até 14 anos de idade (cerca de 40,1 milhões de crianças), contra 24,1% em 2010 (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>). Ao mesmo tempo, a parcela de idosos (65 anos ou mais) subiu para <strong>10,9%</strong> da população (22,2 milhões de pessoas) em 2022, ante 7,4% em 2010 (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>) – um aumento relativo de <strong>57,4%</strong> em 12 anos (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>). A maioria da população hoje está em faixas adultas: <strong>69,3%</strong> têm entre 15 e 64 anos, ou seja, 140,8 milhões de pessoas em idade ativa (<a href="https://www.poder360.com.br/" target="_blank">poder360.com.br</a>). A idade mediana no país já alcança <strong>35 anos</strong>, bem acima dos 29 anos registrados em 2010 (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>), reflexo direto da queda da natalidade e do aumento da longevidade. Em 1980, o Brasil tinha formato de pirâmide “jovem” (38% da população com até 14 anos e apenas 4% com 65+), ao passo que hoje a pirâmide é “adulta”, com maior concentração entre 20 e 59 anos e topo crescente de idosos (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>, <a href="https://brasilescola.uol.com.br/" target="_blank">brasilescola.uol.com.br</a>).</p>
-
-                <p>Em números absolutos, o Censo 2022 contabilizou <strong>203,1 milhões</strong> de habitantes no Brasil (<a href="https://www.poder360.com.br/" target="_blank">poder360.com.br</a>). Destes, 40,13 milhões (19,8%) tinham 0–14 anos, 140,78 milhões (69,3%) tinham 15–64 anos, e 22,17 milhões (10,9%) tinham 65 anos ou mais (<a href="https://www.poder360.com.br/" target="_blank">poder360.com.br</a>). Comparado a 2010, houve queda de 12,6% no número de crianças de 0–14 anos, enquanto a população idosa 65+ aumentou 57,4% (<a href="https://www.poder360.com.br/" target="_blank">poder360.com.br</a>). A base da pirâmide (jovens) está mais estreita, resultado de décadas de redução na taxa de fecundidade – hoje em torno de <strong>1,6 filhos por mulher</strong>, abaixo do nível de reposição. Já o topo da pirâmide se alargou: a expectativa de vida ao nascer ronda <strong>77 anos</strong> (80 anos para mulheres) e continua crescendo, elevando o contingente de idosos (<a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>). Essa mudança torna a pirâmide etária brasileira cada vez menos triangular e mais “enfunilada”, aproximando-se do padrão de países envelhecidos.</p>
-
-                <div class="highlight">
-                     <h4>♀️ Distribuição por Sexo e 🗺️ Região</h4>
-                     <p>As mulheres predominam levemente nas faixas mais velhas devido à maior longevidade – por exemplo, entre os idosos de 80+ anos há proporção maior de mulheres (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>). Regionalmente, o <strong>Norte</strong> ainda é a região mais jovem (25% da população nortista tem até 14 anos), enquanto <strong>Sudeste</strong> e <strong>Sul</strong> apresentam estrutura mais envelhecida (apenas ~18% de jovens 0–14 e em torno de 12% de idosos) (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>). O <strong>Nordeste</strong> está em transição acelerada: embora 21% sejam crianças, já tem 12% de idosos (e essa fatia idosa tende a crescer, pois muitos jovens migraram para outras regiões) (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>, <a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>). Tais diferenças regionais indicam que o envelhecimento populacional ocorre em ritmos distintos pelo país, mas de forma universal.</p>
-                      <!-- Placeholder para Mapa do Brasil com dados regionais -->
-                 </div>
-
-                 <h3>Conclusão do Panorama</h3>
-                 <p>Em suma, o Brasil de 2024 já não possui uma pirâmide “jovem” tradicional. A base estreita (menos nascimentos) e o topo mais largo (mais idosos sobrevivendo) formam uma estrutura arredondada, típica de população adulta em processo de envelhecimento avançado (<a href="https://valor.globo.com/" target="_blank">valor.globo.com</a>). Esse panorama geral traz implicações socioeconômicas importantes: a redução do número de jovens poderá, por exemplo, impactar o mercado de trabalho e a educação, enquanto o aumento de idosos pressiona os sistemas de saúde e previdência.</p>
-            </section>
-
-            <!-- Seção Projeções -->
-            <section id="projeccoes" class="content-section">
-                 <h2>2. Projeções Demográficas Atualizadas (2024–2070)</h2>
-                 <p>As projeções mais recentes do IBGE (Revisão 2024) confirmam a continuidade dessas tendências.</p>
-
-                 <h3>Principais Marcos Projetados</h3>
-                 <div class="timeline">
-                    <div class="timeline-item"><strong>~2041:</strong> O país deve atingir seu <strong>pico populacional</strong> com cerca de <strong>220,4 milhões</strong> de habitantes. Neste ponto, um quarto da população já terá 60 anos ou mais (estimados 55 milhões de idosos, 25,6% do total) (<a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>).</div>
-                    <div class="timeline-item"><strong>A partir de 2042:</strong> O Brasil iniciará um <strong>declínio populacional</strong> inédito, entrando em crescimento demográfico negativo (<a href="https://valor.globo.com/" target="_blank">valor.globo.com</a>, <a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>).</div>
-                    <div class="timeline-item"><strong>~2060:</strong> A <strong>razão de dependência de idosos</strong> (proporção de idosos em relação à população 15–64) sairá de 1 idoso para cada 5 pessoas em idade ativa hoje para cerca de <strong>1 idoso para cada 1,5 ativo</strong>.</div>
-                    <div class="timeline-item"><strong>~2070:</strong> A população projetada seria de <strong>~199 milhões</strong>, retornando a patamares próximos dos atuais. Os idosos de 60+ podem chegar a 75,3 milhões, representando <strong>37,8%</strong> dos habitantes – praticamente 2 em cada 5 brasileiros (<a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>). A parcela de crianças 0–14 anos cairá abaixo de 10%. A idade mediana deve ultrapassar 45 anos.</div>
-                 </div>
-
-                 <h3>A Inversão da Pirâmide e Outros Indicadores</h3>
-                  <p>Nesse cenário futuro, a pirâmide etária brasileira se inverterá: haverá mais pessoas nas faixas altas de idade do que nas bases jovens.</p>
-                 <!-- Placeholder para Gráfico da Pirâmide Futura -->
-                 <div id="piramide-chart-placeholder-futuro">
-                     <p><em>[Visual mostrando a pirâmide projetada para 2040, 2070]</em></p>
-                 </div>
-                 <ul>
-                    <li>A <strong>taxa de fecundidade total (TFT)</strong> estabilizou abaixo do nível de reposição (2,1) desde 2005, estando em torno de 1,6 atualmente (<a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>). Menos nascimentos anuais (aprox. 2,5 milhões em 2023, contra 3,5 milhões no ano 2000 - <a href="https://agenciadenoticias.ibge.gov.br/" target="_blank">agenciadenoticias.ibge.gov.br</a>).</li>
-                    <li>A <strong>esperança de vida ao nascer</strong> projetada para 2040 é de aproximadamente 80 anos, podendo atingir 84 anos em 2070.</li>
-                    <li>A <strong>taxa bruta de natalidade</strong> deve seguir caindo (de ~13‰ atualmente para <10‰ após 2040), enquanto a <strong>taxa de mortalidade</strong> aumentará com o peso das idades avançadas, resultando no crescimento natural negativo (<a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a>).</li>
-                    <li>A <strong>migração</strong> internacional e interna tende a ter efeitos modestos no quadro geral.</li>
-                 </ul>
-
-                 <h3>Implicações e Desafios Futuros</h3>
-                 <p>O Brasil de 2024 está no limiar de se tornar um país envelhecido, com crescimento populacional estagnado e prestes a reverter. Políticas públicas precisarão ajustar o foco:</p>
-                 <div class="impact-card"><strong>👵 Saúde e Previdência:</strong> Maior pressão sobre os sistemas. Necessidade de foco em saúde do idoso, cuidados de longa duração e sustentabilidade previdenciária.</div>
-                 <div class="impact-card"><strong>💼 Mercado de Trabalho e Educação:</strong> Menor força de trabalho jovem, desafio de manter a produtividade. Mudança de foco da educação básica para qualificação contínua e adaptação ao envelhecimento ativo.</div>
-                 <div class="impact-card"><strong>💰 Economia Prateada:</strong> O termo “economia prateada” ganha relevância – referindo-se ao conjunto de oportunidades ligadas à população sênior (saúde, turismo, tecnologia assistiva, serviços). Atualmente, estima-se que os consumidores acima de 50 anos movimentam cerca de <strong>R$ 2 trilhões</strong> por ano no Brasil, em um mercado de aproximadamente 54 milhões de pessoas (<a href="https://ifd.com.br/" target="_blank">ifd.com.br</a>). Esse segmento só tende a crescer.</div>
-            </section>
-
-            <!-- Seção Hub das Gerações -->
-            <section id="geracoes-hub" class="content-section">
-                <h2>3. Perfis das Gerações no Brasil (2024–2025)</h2>
-                <p>Para entender melhor os impactos de mercado e socioculturais, é útil delinear cada geração presente hoje na sociedade brasileira. Convencionam-se cinco gerações principais:</p>
-                 <ul>
-                    <li><strong>Baby Boomers:</strong> Nascidos aproximadamente entre 1946 e 1964.</li>
-                    <li><strong>Geração X:</strong> Nascidos entre 1965 e 1980.</li>
-                    <li><strong>Millennials (Geração Y):</strong> Nascidos entre 1981 e 1996.</li>
-                    <li><strong>Geração Z:</strong> Nascidos entre 1997 e 2012.</li>
-                    <li><strong>Geração Alpha:</strong> Nascidos de 2013 em diante.</li>
-                 </ul>
-                <h3>Resumo das Gerações (Estimativas 2024)</h3>
-                <div class="table-responsive">
-                    <table id="generation-summary-table">
-                       <thead><tr><th>Geração</th><th>Faixa de Nascimento</th><th>Idade em 2024</th><th>Tamanho Pop. (Aprox.)</th><th>% Pop. (Aprox.)</th></tr></thead>
-                       <tbody><!-- Tabela será preenchida por JS --></tbody>
-                    </table>
-                     <p><small><em>¹ Para geração Alpha, consideram-se nascidos até 2025 (como projeção).</em></small></p>
-                     <p><small><em>Observação: Estimativas derivadas dos dados do Censo 2022 e projeções (<a href="https://www.poder360.com.br/" target="_blank">poder360.com.br</a>). Agrupamento de faixas etárias correspondentes a cada coorte geracional.</em></small></p>
-                </div>
-
-                 <p>A seguir, descrevemos cada geração como “personas”, combinando informações sobre idade, número, condições socioeconômicas, comportamentos de consumo, valores culturais, religiosidade e tendências políticas típicas de cada grupo.</p>
-
-                <h3>Explore Cada Geração em Detalhe</h3>
-                <div id="generation-cards-container" class="generation-cards-container">
-                    <!-- Cards serão preenchidos por JS -->
-                </div>
-            </section>
-
-            <!-- Seção Detalhe da Geração (Conteúdo dinâmico) -->
-            <section id="generation-detail" class="content-section">
-                 <!-- Conteúdo será preenchido por JS -->
-                 <div id="generation-detail-content">
-                     <!-- Botão Voltar será inserido aqui pelo JS -->
-                     <!-- Detalhes da geração serão inseridos aqui pelo JS -->
-                 </div>
-            </section>
-
-            <!-- Seção Consumo e Mercado -->
-            <section id="consumo-mercado" class="content-section">
-                 <h2>4. Dados de Mercado: Comportamento de Consumo Comparativo por Geração</h2>
-                 <p>As gerações brasileiras apresentam padrões de consumo distintos, que impactam o mercado de forma segmentada. Destacamos a seguir alguns dados comparativos:</p>
-
-                 <div class="comparisons">
-                    <div class="comparison-point">
-                        <strong>🛒 Preferência por Canais (Online vs Físico)</strong>
-                        <p><strong>Gen Z:</strong> ~46% preferem online.</p>
-                        <p><strong>Millennials/Gen X:</strong> Equilibram ambos (Omnichannel).</p>
-                        <p><strong>Boomers:</strong> ~74% preferem lojas físicas, mas com adesão crescente ao digital.</p>
-                        <small><em>Fonte: consumidormoderno.com.br, cartacapital.com.br</em></small>
-                    </div>
-                     <div class="comparison-point">
-                        <strong>💸 Pagamentos e Digitalização</strong>
-                        <p><strong>Adoção Digital (Pix, Cartões):</strong> Alta em todas as gerações (Gen Z 51%, Boomers 53%).</p>
-                        <p><strong>Cashback/Cupons:</strong> Alto uso por Gen Z (69%), baixo por Boomers (21%).</p>
-                         <small><em>Fonte: consumidormoderno.com.br</em></small>
-                    </div>
-                     <div class="comparison-point">
-                        <strong>🗣️ Influência nas Decisões de Compra</strong>
-                        <p><strong>Gen Z:</strong> Redes Sociais/Influencers (51%).</p>
-                        <p><strong>Boomers:</strong> Amigos/Familiares (44%).</p>
-                        <p><strong>Blogs/Reviews Online:</strong> Relevância similar para ambos (~22-23%).</p>
-                         <small><em>Fonte: consumidormoderno.com.br</em></small>
-                    </div>
-                     <div class="comparison-point">
-                        <strong>📱 Preferência por Aplicativos vs Websites</strong>
-                        <p><strong>Gen Z:</strong> Preferem Apps (69%) sobre sites (51%).</p>
-                        <p><strong>Boomers:</strong> Também mostram leve preferência por Apps (53%) sobre sites (47%).</p>
-                        <p><em>Indica a importância de experiências mobile-first intuitivas para todos.</em></p>
-                         <small><em>Fonte: consumidormoderno.com.br</em></small>
-                    </div>
-                    <div class="comparison-point">
-                        <strong>💖 Fidelidade à Marca</strong>
-                        <p><strong>Gen Z:</strong> Surpreendentemente um pouco mais fiéis quando encontram alinhamento (17% sempre compram a mesma marca).</p>
-                        <p><strong>Boomers:</strong> Menos fiéis (11%), podem priorizar preço/conveniência sobre marca.</p>
-                        <p><em>Maioria varia, mas Gen Z mostra nicho leal.</em></p>
-                         <small><em>Fonte: consumidormoderno.com.br</em></small>
-                    </div>
-                     <div class="comparison-point">
-                        <strong>🌍 Valores e Causas Impactando Consumo</strong>
-                        <p><strong>Gen Z/Millennials:</strong> Forte impacto de ética, sustentabilidade e inclusão nas decisões (87% Gen Z deixariam de comprar de marcas em escândalos). Cobram diversidade.</p>
-                        <p><strong>Gen X/Boomers:</strong> Mais focados em qualidade/preço, menos acompanhamento ativo de escândalos ou exigência por pautas identitárias.</p>
-                         <small><em>Fonte: mercadoeconsumo.com.br, zlsn.com.br</em></small>
-                    </div>
-                    <div class="comparison-point">
-                        <strong>🛍️ Categorias de Gastos Prioritárias</strong>
-                        <p><strong>Alpha (Influência):</strong> Brinquedos, alimentos infantis, entretenimento.</p>
-                        <p><strong>Gen Z:</strong> Moda acessível, games, fast-food/delivery, cosméticos, eletrônicos.</p>
-                        <p><strong>Millennials:</strong> Tecnologia, experiências (viagens, gastronomia), fitness, streaming.</p>
-                        <p><strong>Gen X:</strong> Educação dos filhos, lazer familiar, casa, carro, saúde, investimentos.</p>
-                        <p><strong>Boomers:</strong> Saúde, medicamentos, cuidados pessoais, turismo tradicional, seguros, lar.</p>
-                         <small><em>Fonte: ifd.com.br, mercadoeconsumo.com.br</em></small>
-                    </div>
-                     <div class="comparison-point">
-                        <strong>📢 Atitude frente a Publicidade</strong>
-                        <p><strong>Gen Z/Millennials:</strong> Influenciados por conteúdo autêntico/orgânico (influencers, reviews). Céticos com publicidade tradicional.</p>
-                        <p><strong>Gen X/Boomers:</strong> Respondem melhor à publicidade tradicional (TV, jornal), valorizam credibilidade.</p>
-                        <p><em>Promoções impactam todos, mas o canal de entrega varia.</em></p>
-                         <small><em>Fonte: consumidormoderno.com.br</em></small>
-                    </div>
-                 </div>
-
-                 <h3>Insights para Empresas</h3>
-                <ul>
-                    <li>Adote estratégia omnichannel e invista em mobile/apps.</li>
-                    <li>Segmente comunicação (linguagem, canais, valores).</li>
-                    <li>Jovens: Autenticidade, propósito, ética, redes sociais.</li>
-                    <li>Maduros/Idosos: Confiança, clareza, qualidade, atendimento humanizado.</li>
-                    <li>Prepare-se para exigências de sustentabilidade e inclusão.</li>
-                    <li>Explore as oportunidades crescentes da Economia Prateada.</li>
-                </ul>
-            </section>
-
-            <!-- Seção Impactos Sociais -->
-            <section id="impactos-sociais" class="content-section">
-                <h2>5. Considerações Sociológicas sobre o Impacto Geracional em 2024–2025</h2>
-                <p>O Brasil de 2024 é profundamente marcado pela convivência e interação entre essas gerações, gerando impactos sociológicos notáveis:</p>
-
-                <div class="impact-themes">
-                    <div class="impact-theme">
-                        <h3>🏡 Envelhecimento e Reconfiguração Familiar</h3>
-                        <p>Aumento de lares multigeracionais por necessidade e apoio. Avós boomers ativos na vida dos netos Gen Z/Alpha, promovendo troca intergeracional (memória histórica vs. tecnologia). Adaptação a diferentes estilos de vida sob o mesmo teto, podendo amenizar conflitos de visão de mundo.</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>🤝 Choque e Aprendizado de Valores</h3>
-                        <p>Conflitos culturais (liberalismo jovem vs. tradicionalismo mais velho) em ambientes como trabalho e educação. Empresas se adaptam (diversidade, flexibilidade), enquanto jovens aprendem sobre ética de trabalho e paciência. Busca por equilíbrio entre conservadorismo e mudança (ex: aceitação legal de pautas LGBTQ+ com respeito à liberdade religiosa).</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>⛪ Religião e Mudança Geracional</h3>
-                        <p>Jovens (Millennials/Gen Z) menos religiosos institucionalmente, crescimento dos "sem religião". Pluralismo religioso dentro das famílias (avó católica, mãe evangélica, filha agnóstica). Desafio para igrejas se reinventarem. Vácuo espiritual preenchido por novas formas (comunidades online, terapias).</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>🏛️ Política e Renovação Geracional</h3>
-                        <p>Embate geracional no poder (líderes boomers vs. engajamento jovem). Peso crescente do voto jovem, decisivo em eleições recentes. Entrada de Millennials/Gen Z na política formal traz novas pautas (sustentabilidade, transparência) e estilos (redes sociais). Divergência de agendas entre eleitores jovens e idosos.</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>📈 Mercado de Trabalho e Economia</h3>
-                        <p>Ambiente multi-idades com diversidade de competências (experiência Boomers/X vs. inovação Y/Z). Mentoria cruzada. Mudança na cultura corporativa (hierarquia vs. colaboração). Desafios: adiamento da aposentadoria, alta rotatividade jovem, precarização vs. empreendedorismo.</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>📺 Cultura e Mídia</h3>
-                        <p>Fragmentação do consumo (TV/jornais para mais velhos vs. streaming/redes sociais para jovens). Dificuldade em manter repertório cultural comum. Mídia tradicional tenta se adaptar. Cultura pop globalizada influencia mais os novos (eSports vs. futebol, etc.).</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>❤️ Conflitos e Solidariedade</h3>
-                        <p>Tensões e estereótipos ("velhos ultrapassados" vs. "jovens mimados") coexistem com forte solidariedade e interdependência, especialmente em crises (pandemia, dificuldades econômicas). Laços familiares se fortalecem.</p>
-                    </div>
-                    <div class="impact-theme">
-                        <h3>🔮 Perspectivas Futuras</h3>
-                        <p>Caminho para cenário com mais idosos e menos jovens, exigindo adaptação de políticas. Voz política crescente dos idosos vs. influência cultural/econômica dos jovens. Necessidade de diálogo e cooperação intergeracional para aproveitar o melhor de cada grupo e enfrentar desafios comuns.</p>
-                    </div>
-                </div>
-
-                <h3>Conclusão Sociológica</h3>
-                <p>O Brasil de 2024–2025 é palco de uma riqueza geracional sem precedentes. Compreender essas diferenças é crucial para o mercado e para a coesão social. O equilíbrio entre tradição (gerações mais velhas) e mudança (gerações mais novas) definirá os rumos do país, que tem o desafio e a oportunidade de envelhecer com criatividade e inovar com sabedoria.</p>
-            </section>
-
-            <!-- Seção Fontes -->
-            <section id="fontes" class="content-section">
-                 <h2>Fontes de Dados e Metodologia</h2>
-                 <h3>Fontes Utilizadas</h3>
-                 <p>Este relatório integrou informações de órgãos oficiais, institutos de pesquisa, centros de estudo populacional e pesquisas de mercado contemporâneas, conforme publicações recentes (principalmente 2022-2024):</p>
-
-                 <h4>Órgãos Oficiais e Institutos de Pesquisa</h4>
-                 <ul>
-                     <li>IBGE (Censo Demográfico 2010/2022, PNAD Contínua, Projeções da População) - <a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>, <a href="https://agenciadenoticias.ibge.gov.br/" target="_blank">agenciadenoticias.ibge.gov.br</a></li>
-                     <li>Datafolha - <a href="https://datafolha.folha.uol.com.br/" target="_blank">datafolha.folha.uol.com.br</a>, <a href="https://www1.folha.uol.com.br/" target="_blank">www1.folha.uol.com.br</a></li>
-                     <li>PoderData / Poder360 - <a href="https://www.poder360.com.br/" target="_blank">poder360.com.br</a></li>
-                     <li>IPEA (Instituto de Pesquisa Econômica Aplicada)</li>
-                     <li>Atlas das Juventudes</li>
-                 </ul>
-
-                 <h4>Pesquisas de Mercado e Consultorias</h4>
-                 <ul>
-                     <li>NielsenIQ</li>
-                     <li>Opinion Box - <a href="https://www.opinionbox.com/" target="_blank">opinionbox.com</a></li>
-                     <li>Pesquisa Mosaico / Banco PAN (via Consumidor Moderno) - <a href="https://consumidormoderno.com.br/" target="_blank">consumidormoderno.com.br</a></li>
-                     <li>McKinsey - <a href="https://www.mckinsey.com/br/" target="_blank">mckinsey.com/br</a></li>
-                     <li>IFD (Instituto Foodservice Brasil) - <a href="https://ifd.com.br/" target="_blank">ifd.com.br</a></li>
-                     <li>ZSLN Consultoria - <a href="https://zlsn.com.br/" target="_blank">zlsn.com.br</a></li>
-                 </ul>
-
-                 <h4>Mídia e Publicações Citadas</h4>
-                 <ul>
-                     <li>Brasil Escola UOL - <a href="https://brasilescola.uol.com.br/" target="_blank">brasilescola.uol.com.br</a></li>
-                     <li>EcoDebate - <a href="https://www.ecodebate.com.br/" target="_blank">ecodebate.com.br</a></li>
-                     <li>Valor Econômico - <a href="https://valor.globo.com/" target="_blank">valor.globo.com</a></li>
-                     <li>Exame - <a href="https://exame.com/" target="_blank">exame.com</a></li>
-                     <li>Vermelho - <a href="https://vermelho.org.br/" target="_blank">vermelho.org.br</a></li>
-                     <li>Blog Toro Investimentos - <a href="https://blog.toroinvestimentos.com.br/" target="_blank">blog.toroinvestimentos.com.br</a></li>
-                     <li>CartaCapital - <a href="https://www.cartacapital.com.br/" target="_blank">cartacapital.com.br</a></li>
-                     <li>Agência Brasil - <a href="https://agenciabrasil.ebc.com.br/" target="_blank">agenciabrasil.ebc.com.br</a></li>
-                     <li>Mercado & Consumo - <a href="https://mercadoeconsumo.com.br/" target="_blank">mercadoeconsumo.com.br</a></li>
-                     <li>Meio & Mensagem - <a href="https://www.meioemensagem.com.br/" target="_blank">meioemensagem.com.br</a></li>
-                     <li>Publya - <a href="https://publya.com/" target="_blank">publya.com</a></li>
-                     <li>Época Negócios - <a href="https://epocanegocios.globo.com/" target="_blank">epocanegocios.globo.com</a></li>
-                 </ul>
-                 <p><em>Nota: Recomenda-se consultar as publicações originais para detalhes completos e contextos específicos.</em></p>
-
-                 <h3>Nota Metodológica</h3>
-                 <p>As análises apresentadas neste site são baseadas na compilação e interpretação de dados públicos e pesquisas de mercado recentes. As estimativas populacionais por geração são aproximações baseadas no agrupamento de faixas etárias dos dados censitários e projeções intercensitárias, e as definições dos anos de corte para cada geração podem variar ligeiramente entre diferentes fontes.</p>
-            </section>
-
-        </main>
-
-        <footer class="site-footer">
-            <p>© <span id="current-year"></span> Pirâmide Etária Brasil. Todos os direitos reservados.</p>
-            <p><a href="#fontes" data-target="fontes">Fontes de Dados</a></p>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
