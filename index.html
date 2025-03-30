@@ -3,31 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Rolador de Dados</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    #resultado {
-      font-size: 48px;
-      margin-top: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -38,12 +14,7 @@
 
   <div id="resultado">🎲</div>
 
-  <script>
-    function rolarDado(lados) {
-      const resultado = Math.floor(Math.random() * lados) + 1;
-      document.getElementById('resultado').textContent = `🎲 ${resultado}`;
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
